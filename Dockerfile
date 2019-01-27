@@ -5,4 +5,6 @@ WORKDIR /app
 
 COPY . /app
 
+EXPOSE 8000
+
 CMD ["/bin/bash", "start.sh"]
