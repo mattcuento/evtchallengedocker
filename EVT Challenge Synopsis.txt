@@ -1,0 +1,24 @@
+﻿EVT Technology Challenge
+
+
+Synopsis:
+
+
+My process consists of two files, a python script and a bash script. The process begins with the bash script, beginning the process with the command “bash start.sh”. When instantiated, the bash script installs and configures Python 3.6 for the Ubuntu OS. This “configuration management” consists of Ubuntu terminal commands to retrieve the Python packages. Once installed, the script calls for Python to run the project.py script. The project.py script does most of the heavy lifting. It imports modules including os, urllib, webbrowser, socketserver, and http.server, then creates two variables. The first, called url, stores the URL of the file given in the spec. The second, file, is the title of the file that will be displayed on the local server. Following, I use the urllib library to open the given url and parse the text to save to a string called “html”. I then open the index.html file and write the html code to it. From here, I utilize the webbrowser module to open a new tab in the default browser to the address of the Python SimpleHTTPServer (https://localhost:8000).
+
+
+My technologies used include:
+
+
+OS - Ubuntu
+Server - Python SimpleHTTPServer
+Config Management - Pure Code
+
+
+I decided to use the Python SimpleHTTPServer because I am most familiar with the Python language and the simple server is easy to learn, use, and quick to implement. All that is needed is an instance of a request handler and an instance of a TCP server with a specified port. 
+
+
+I decided to use the Ubuntu OS because it was the most lightweight option to help with configuration management. The only application that needed configuring was Python itself, which only requires two lines of Ubuntu terminal commands to download the necessary packages and configure the path. 
+
+
+As for configuration management, I decided I only needed pure code to configure my application. With the script being so small and the only application needing configuration was Python, it was easier to use a couple terminal commands within my starting bash script.
