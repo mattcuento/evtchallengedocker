@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 
 #import modules to get filepath, to open browser, opening url, creating a request handler, and creating a TCPServer
-import webbrowser, urllib.request, http.server, socketserver
+import os, webbrowser, urllib.request, http.server, socketserver
 
 #creating vars to store local file name and url
 url = "http://evtgit01.evtcorp.com/yrutenberg/Tech-Challenge/raw/master/evt-web.html"
@@ -11,11 +12,13 @@ webpage = urllib.request.urlopen(url)
 html = webpage.read()
 
 #writing text to index.html file
+#only saves to app directory, which should be fine
 with open(file, "wb") as text_file:
 	text_file.write(html)
 
 #auto open default browser to index.html
-webbrowser.open_new_tab("http://localhost:8000")
+#will not auto open browser, why?
+webbrowser.open_new_tab("file://" + os.path.realpath(file))
 
 #specifying local port number
 PORT = 8000
